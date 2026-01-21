@@ -3,10 +3,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Sala {
-    public String nombreSala;
-    public int aforoMaximo;
-    public List<String> listaNicks = new ArrayList<>();
-    public List<PrintWriter> listaConexiones = new ArrayList<>();
+    private String nombreSala;
+    private int aforoMaximo;
+    private List<String> listaNicks = new ArrayList<>();
+    private List<PrintWriter> listaConexiones = new ArrayList<>();
 
     public Sala(String nombre, int aforo) {
         this.nombreSala = nombre;
@@ -22,3 +22,4 @@ public class Sala {
         return false;
     }
 }
+
