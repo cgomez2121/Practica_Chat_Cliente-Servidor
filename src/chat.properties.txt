@@ -1,5 +1,0 @@
-puerto=5000
-hilos_pool=10
-aforo_max=5
-admins=admin,Carlos
-archivo_log=servidorlogs.txt
