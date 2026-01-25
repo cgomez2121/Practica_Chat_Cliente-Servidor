@@ -66,7 +66,7 @@ public class Sala {
     /**
      * Intenta añadir un usuario a la sala.
      * Es synchronized para evitar conflictos si dos usuarios entran a la vez.
-     * nick es eñ nombre del usuario que quiere entrar.
+     * nick es el nombre del usuario que quiere entrar.
      * flujo es el flujo de salida para enviarle mensajes.
      * devuelve true si entró correctamente, false si la sala estaba llena.
      */
