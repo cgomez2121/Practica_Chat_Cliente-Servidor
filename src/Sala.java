@@ -128,3 +128,4 @@ public class Sala {
                 "Usuarios: " + nicks.size() + "/" + aforo;
     }
 }
+
