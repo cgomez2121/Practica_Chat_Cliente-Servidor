@@ -22,11 +22,11 @@ public class ClienteChat {
         int puerto = 0;
 
         // LEER ARCHIVO PROPIEDADES
-        try (FileInputStream fis = new FileInputStream("chat.properties")) {
-            Properties p = new Properties();
-            p.load(fis);
-            host = p.getProperty("servidor.ip");
-            puerto = Integer.parseInt(p.getProperty("servidor.puerto"));
+        try (FileInputStream archivoConfig = new FileInputStream("chat.properties")) {
+            Properties configuracion = new Properties();
+            configuracion.load(archivoConfig);
+            host = configuracion.getProperty("servidor.ip");
+            puerto = Integer.parseInt(configuracion.getProperty("servidor.puerto"));
         } catch (IOException e) {
             System.err.println("ERROR: No se pudo leer chat.properties");
             return;
@@ -59,20 +59,21 @@ public class ClienteChat {
             return;
         }
 
-        // LOGICA DEL CHAT
+        // LOGICA DE CHAT
         try (Socket socket = s) {
-            // Hilo Lector: Se encarga de recibir mensajes del servidor y mostrarlos en pantalla, elaborado con expresión lambda
+            // Hilo lector hecho con expresion lambda como vimos en clase
             new Thread(() -> {
                 try (BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()))) {
-                    String mensajeRecibido;
-                    while ((mensajeRecibido = in.readLine()) != null)
-                        System.out.println(mensajeRecibido);
+                    String msg;
+                    while ((msg = in.readLine()) != null)
+                        System.out.println(msg);
                 } catch (IOException e) {
                     System.out.println("Conexión con el servidor finalizada.");
+                    System.exit(0);
                 }
             }).start();
 
-            // Hilo Escritor: Se encarga de leer lo que escribe el usuario y mandarlo al servidor, es el propio main para aprovechar recursos
+            // Hilo escritor, es el propio main para ahorrar recursos
             PrintWriter out = new PrintWriter(socket.getOutputStream(), true);
             Scanner sc = new Scanner(System.in);
             while (true) {

@@ -1,6 +1,7 @@
 import java.io.PrintWriter;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Clase que representa una sala de chat individual.
@@ -11,8 +12,8 @@ public class Sala {
     private final String nombre;
     private int aforo;
     private final LocalDateTime fechaCreacion;
-    private final ArrayList<String> nicks = new ArrayList<>();
-    private final ArrayList<PrintWriter> flujos = new ArrayList<>();
+    private final List<String> nicks = new ArrayList<>();
+    private final List<PrintWriter> flujos = new ArrayList<>();
 
     /**
      * Constructor de la clase Sala.
@@ -52,14 +53,14 @@ public class Sala {
     /**
      * Devuelve la lista de nombres de usuario (nicks) actualmente en la sala.
      */
-    public ArrayList<String> getListaNicks() {
+    public List<String> getListaNicks() {
         return nicks;
     }
 
     /**
      * Devuelve la lista de flujos de escritura (PrintWriters) de los usuarios en la sala.
      */
-    public ArrayList<PrintWriter> getListaFlujos() {
+    public List<PrintWriter> getListaFlujos() {
         return flujos;
     }
 
