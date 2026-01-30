@@ -2,7 +2,7 @@
 
 Este proyecto es un chat multihilo desarrollado en Java utilizando Sockets. Permite que varios usuarios se conecten simultáneamente para chatear en salas públicas o enviarse mensajes privados. Incluye un sistema de administración para gestionar salas, controlar el aforo y expulsar usuarios.
 
-## 📋 Instrucciones de ejecución
+## Instrucciones de ejecución
 
 1.  Arrancar el servidor:
     Ejecuta la clase `Servidor.java`. Se creará el archivo de log y quedará a la espera de conexiones en el puerto configurado.
@@ -15,7 +15,7 @@ Este proyecto es un chat multihilo desarrollado en Java utilizando Sockets. Perm
 3.  Comandos:
     Escribe `/ayuda` dentro del chat para ver la lista completa de acciones disponibles.
 
-## ⚙️ Configuración (chat.properties)
+## Configuración (chat.properties)
 
 El comportamiento del servidor se puede ajustar sin tocar el código editando el archivo `chat.properties`:
 
